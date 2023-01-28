@@ -2,6 +2,13 @@ html {
     padding: 0em;
 }
 
+h1{
+    font-size: 5em;
+    text-align: center;
+    color: black;
+    font-family: 'DotGothic16', sans-serif;
+}
+
 body {
     background: #001233;
     margin: 0em;
@@ -13,6 +20,7 @@ body {
 .card{
     width: 20%; 
    /*  height: 35em; */
+   
     border: #000814 solid 5px;
     background-color: #0353a4;
     text-align: center;
@@ -47,7 +55,8 @@ body {
 .name{
 
     font-size: 0.8em;
-    
+    font-weight: bold;
+    color: black; 
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -60,21 +69,7 @@ body {
 
 
 
-@media (max-width: 768px) {
-    
 
-    .card {
-        
-        width: 100%;
-        flex-basis: 100%;
-    }
-
-    .contain {
-        width:100%;
-        margin: 1em 0em 1em 0em;
-    }
-
-}
 
 /* search bar */
 
@@ -185,4 +180,29 @@ body {
   right: 22px;
   top: 13px;
   height: 18px;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    
+
+    .card {
+        
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .contain {
+        width:100%;
+        margin: 1em 0em 1em 0em;
+    }
+
+
+    .search{
+        max-width: 100%;
+        font-size: 0.1em ;
+    }
+
 }
