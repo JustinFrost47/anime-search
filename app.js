@@ -18,16 +18,18 @@
       *      api   
      * */
 
+
+
 const ElementRemove = () => {
-    
+
     const cards = document.querySelectorAll(".card")
         const cont = document.querySelector('.contain')
     let len = cards.length;
-    
-    console.log(`${len} fdsasdafsadf`)
+
+    //console.log(`${len} fdsasdafsadf`)
 
     while(len != 0){
-        
+
         len -=1;
        cont.removeChild(cards[len])
     }
@@ -49,31 +51,37 @@ const ElementAdd = (title, img, stat, link) => {
 
 const fetch = async (word)=> {
 
+
     try{
     const opts = {
-        params:{ 
-            letter : word 
-        }};
+        params:{
+            q : word
+        }
+    };
+
     const response = await axios.get("https://api.jikan.moe/v4/anime", opts);
     const data = await  response.data.data;
-    console.log('JSON fetched successfully')
+    console.log(`JSON fetched successfully with ${data.length} entries`)
+
+
     for(let element of data){
         let  img = element.images.jpg.large_image_url;
         let  title = element.title;
         let  stat = element.status;
         let link = element.url;
-        
+
+
         ElementAdd(title, img, stat, link);
     }
     } catch{(e) => {
         console.log('error occured while fetching data from api');
         console.log(e);
-        
+
     }
 
 
-   
-       
+
+
 }
 }
 
